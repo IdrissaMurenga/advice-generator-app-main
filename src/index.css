@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/** box sizing rules**/
+*,
+*::before,
+*::after{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/** HTML5 display-role reset for older browsers **/
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+/** set core body default **/
+body {
+	line-height: 1;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+/** set core root default **/
+html:focus-within{
+    scroll-behavior: smooth;
+}
+/** remove list style on ul, ol element with a list role, which suggest default styling will be removed **/
+ul,ol,li{
+    list-style: none;
+}
+/** make image easier to work **/
+img,picture{
+    max-width: 100%;
+    display: block;
+}
+/** element that don't have a class get default **/
+a{
+    text-decoration: none;
+    /* text-decoration-skip-ink: auto; */
+}
+blockquote, q {
+	quotes: none;
+}
+/** inherit fonts for inputs and buttons **/
+input,button,textarea,select{
+    font: inherit;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/** remove all animations, transitions and smoth scroll for people that prefere not to see them **/
+@media(prefers-reduced-motion:reduce){
+    html:focus-within{
+        scroll-behavior: auto;
+    }
+    *,*::before,*::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0,01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
